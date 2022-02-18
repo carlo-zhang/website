@@ -193,10 +193,10 @@ The following manifest defines an Ingress that sends traffic to your Service via
     After you make this change, your web browser sends requests for
     hello-world.info URLs to Minikube.
 
-1. Verify that the Ingress controller is directing traffic:
+1. Verify that the Ingress controller is directing traffic（nodeport port with Ingress）:
 
     ```shell
-    curl hello-world.info
+    curl hello-world.info:30078
     ```
 
     You should see:
@@ -277,10 +277,10 @@ The following manifest defines an Ingress that sends traffic to your Service via
    Hostname: web-55b8c6998d-8k564
    ```
 
-1. Access the 2nd version of the Hello World app.
+1. Access the 2nd version of the Hello World app(nodeport port with Ingress).
 
    ```shell
-   curl hello-world.info/v2
+   curl hello-world.info:30078/v2
    ```
 
    The output is similar to:
